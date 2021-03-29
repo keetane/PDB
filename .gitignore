@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+*.sdf
+*.smi
+*.cif
+*.pdb
+*.pse
+*.csv
