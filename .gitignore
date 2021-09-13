@@ -1,0 +1,7 @@
+*.sdf
+*.smi
+*.cif
+*.pdb
+*.pse
+*.mmtf
+*.ipynb_checkpoints
