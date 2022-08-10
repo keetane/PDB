@@ -1,4 +1,0 @@
-log test.pml
-test.pmlhide label
-cmd.label('''byca(sele)''', 'oneletter+resi')
-log_open test.pml

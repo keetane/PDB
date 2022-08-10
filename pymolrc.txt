@@ -1,0 +1,57 @@
+#set cartoon_transparency, 0.1
+#set transparency, 0.4
+set surface_color, white
+set sphere_scale, 0.4
+set label_position, (3,1,1)
+set label_size, 25
+# set ray_trace_mode, 1
+set ray_shadow, off
+bg_color silver
+
+one_letter ={'VAL':'V', 'ILE':'I', 'LEU':'L', 'GLU':'E', 'GLN':'Q', \
+'ASP':'D', 'ASN':'N', 'HIS':'H', 'TRP':'W', 'PHE':'F', 'TYR':'Y',    \
+'ARG':'R', 'LYS':'K', 'SER':'S', 'THR':'T', 'MET':'M', 'ALA':'A',    \
+'GLY':'G', 'PRO':'P', 'CYS':'C'}
+
+alias al, alignto; zoom
+alias sp, split_chains enabled; alignto; zoom
+alias cc, util.color_chains("(enabled and name CA)",_self=cmd)
+
+alias pl, preset.ligand_cartoon("enabled",_self=cmd);show spheres, solvent
+alias see, zoom byres organic around 8 and chain A
+alias del, as nb_spheres, solvent
+alias sol, as nb_spheres, solvent; hide nb_spheres
+alias line, show lines, byres organic around 4 and enabled
+alias hb, select ligand, organic and enabled; cmd.dist("contact","(ligand)","(byobj (ligand)) and (not (ligand))",quiet=1,mode=2,label=0,reset=1); cmd.enable("contact")
+
+
+alias well, show surface, byres organic expand 5 and enabled
+alias 5, create a5, byres organic expand 5 and enabled; disable !a5; see
+alias 4, create a4, byres organic expand 4 and enabled; disable !a4; see
+alias x, select sele, byres sele expand 4 and enabled
+
+alias tag, label n. CA and sele, "%s%s" % (one_letter[resn], resi)
+alias untag, hide label, sele
+
+alias pick, cmd.mouse('forward')
+alias ch, capture; save image.png
+
+alias k, hide sticks, polymer.protein; show sticks, resn lys
+alias c, hide sticks, polymer.protein; show sticks, resn cys
+alias s, hide sticks, polymer.protein; show sticks, resn ser
+alias h, hide sticks, polymer.protein; show sticks, resn his
+alias t, hide sticks, polymer.protein; show sticks, resn thr
+alias r, hide sticks, polymer.protein; show sticks, resn arg
+alias d, hide sticks, polymer.protein; show sticks, resn asp
+alias e, hide sticks, polymer.protein; show sticks, resn glu
+alias n, hide sticks, polymer.protein; show sticks, resn asn
+alias q, hide sticks, polymer.protein; show sticks, resn gln
+alias y, hide sticks, polymer.protein; show sticks, resn tyr
+alias f, hide sticks, polymer.protein; show sticks, resn phe
+alias w, hide sticks, polymer.protein; show sticks, resn try
+alias g, hide sticks, polymer.protein; show sticks, resn gly
+alias a, hide sticks, polymer.protein; show sticks, resn ala
+alias m, hide sticks, polymer.protein; show sticks, resn met
+alias p, hide sticks, polymer.protein; show sticks, resn pro
+alias fasta, print(cmd.get_fastastr('enabled'))
+alias plddt, spectrum b, rainbow_rev, maximum=100, minimum=25
