@@ -1,0 +1,3 @@
+util.cba(10,"interface",_self=cmd)
+util.cba(5271,"interface",_self=cmd)
+log_close 
