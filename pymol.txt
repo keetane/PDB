@@ -32,6 +32,9 @@ alias del, as nb_spheres, solvent
 alias sol, as nb_spheres, solvent; hide nb_spheres
 alias line, show lines, byres organic around 4 and enabled
 alias hb, select ligand, organic and enabled;cmd.dist("contact","(ligand)","(byobj (ligand)) and (not(ligand))",quiet=1,mode=2,label=0,reset=1); cmd.enable("contact")
+alias at,cmd.dist("contact","(sele)","(byobj (sele)) and (not(sele))",quiet=1,mode=2,label=0,reset=1); cmd.enable("contact")
+alias ph, hide (hydro) and enabled and (elem C extend 1)
+alias hydro, show (hydro) and enabled
 
 alias well, show surface, byres organic expand 5 and enabled
 alias cav, set surface_cavity_mode, 2
@@ -54,9 +57,12 @@ alias n, hide sticks, polymer.protein; show sticks, resn asn
 alias q, hide sticks, polymer.protein; show sticks, resn gln
 alias y, hide sticks, polymer.protein; show sticks, resn tyr
 alias f, hide sticks, polymer.protein; show sticks, resn phe
-alias w, hide sticks, polymer.protein; show sticks, resn try
+alias w, hide sticks, polymer.protein; show sticks, resn trp
 alias g, hide sticks, polymer.protein; show sticks, resn gly
 alias a, hide sticks, polymer.protein; show sticks, resn ala
+alias v, hide sticks, polymer.protein; show sticks, resn val
+alias l, hide sticks, polymer.protein; show sticks, resn leu
+alias i, hide sticks, polymer.protein; show sticks, resn ile
 alias m, hide sticks, polymer.protein; show sticks, resn met
 alias p, hide sticks, polymer.protein; show sticks, resn pro
 alias fasta, print(cmd.get_fastastr('enabled'))

@@ -1,3 +1,2 @@
-util.cba(10,"interface",_self=cmd)
-util.cba(5271,"interface",_self=cmd)
+cmd.hide("(4QL3 and hydro and (elem C extend 1))")
 log_close 
