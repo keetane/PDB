@@ -1,2 +1,4 @@
-cmd.hide("(4QL3 and hydro and (elem C extend 1))")
+cmd.enable('interface')
+cmd.disable('interface_polar_conts')
+cmd.dist("interface_polar_conts","interface","interface",quiet=1,mode=2,label=0,reset=1);cmd.enable("interface_polar_conts")
 log_close 
