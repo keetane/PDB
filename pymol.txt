@@ -72,5 +72,5 @@ run mut.py
 run findseq.py
 ### findseq [sequence], [TargetedObjectName], [NewObjectName]
 ### select [NewObjectName], ps. [sequence]
-run interfaßceResidues.py
+run interfaceResidues.py
 alias if, cmd.dist("interface_polar_conts","interface","interface",quiet=1,mode=2,label=0,reset=1);cmd.enable("interface_polar_conts")
