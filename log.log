@@ -1,4 +1,2 @@
-cmd.enable('interface')
-cmd.disable('interface_polar_conts')
-cmd.dist("interface_polar_conts","interface","interface",quiet=1,mode=2,label=0,reset=1);cmd.enable("interface_polar_conts")
+util.cba(144,"AF-Q5TAQ9-F1-model_v3",_self=cmd)
 log_close 

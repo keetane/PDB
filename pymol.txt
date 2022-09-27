@@ -36,7 +36,7 @@ alias hb, select ligand, organic and enabled;cmd.dist("contact","(ligand)","(byo
 alias at,cmd.dist("contact","(sele)","(byobj (sele)) and (not(sele))",quiet=1,mode=2,label=0,reset=1); cmd.enable("contact")
 alias ph, hide (hydro) and enabled and (elem C extend 1)
 alias hydro, show (hydro) and enabled
-
+alias white, util.cba(144,"enabled",_self=cmd)
 
 
 alias well, show surface, byres organic expand 5 and enabled
