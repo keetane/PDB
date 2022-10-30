@@ -1,2 +1,4 @@
-util.cba(144,"AF-Q5TAQ9-F1-model_v3",_self=cmd)
+cmd.wizard("renaming","4FVR")
+refresh_wizard
+cmd.get_wizard().do_key(13,0,0,0)
 log_close 
