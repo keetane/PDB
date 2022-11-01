@@ -24,7 +24,8 @@ alias al, alignto; zoom
 alias sp, split_chains enabled; alignto; zoom
 alias cc, util.color_chains("(enabled and name CA)",_self=cmd)
 
-alias plddt, spectrum b, rainbow_rev, enabled, maximum=100, minimum=25; color white, enabled and sc. and elem c; color red, enabled and elem o; color yellow, enabled and elem s; color blue, enabled and elem n; color orange, enabled and elem p
+#alias plddt, spectrum b, rainbow_rev, enabled, maximum=100, minimum=25; color white, enabled and sc. and elem c; color red, enabled and elem o; color yellow, enabled and elem s; color blue, enabled and elem n; color orange, enabled and elem p
+alias plddt, color 0x0053D6, enabled and b < 100; color 0x65CBF3, enabled and b < 90; color 0xFFDB13, enabled and b < 70; color 0xFF7D45, enabled and b < 50; util.cnc
 
 ##ligand sight inspections
 alias pl, preset.ligand_cartoon("enabled",_self=cmd);show spheres, solvent
