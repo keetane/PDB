@@ -1,0 +1,25 @@
+#%%
+import os
+import imageio.v2 as imageio  # 変更点はこちら
+import argparse
+
+# コマンドライン引数を解析
+parser = argparse.ArgumentParser(description='Create a GIF from PNG images in the same directory.')
+parser.add_argument('-d', type=int, default=1000, help='Duration of each frame')
+args = parser.parse_args()
+
+# スクリプトが置かれているディレクトリを取得
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# .pngファイルを取得し、ソート
+image_files = sorted([os.path.join(script_dir, f) for f in os.listdir(script_dir) if f.endswith('.png')])
+
+# GIFとして保存（ループ設定あり）
+gif_filename = os.path.basename(script_dir) + '.gif'
+with imageio.get_writer(gif_filename, mode='I', duration=args.d, loop=0) as writer:
+    for filename in image_files:
+        image = imageio.imread(filename)
+        writer.append_data(image)
+
+print(f"ループするGIFが作成されました: {gif_filename} (frame duration: {args.d} milliseconds)")
+
