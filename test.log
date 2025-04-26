@@ -1,2 +1,0 @@
-cmd.dist("sele_polar_conts","(sele)","(byobj (sele)) and (not (sele))",quiet=1,mode=2,label=0,reset=1);cmd.enable("sele_polar_conts")
-log_close
